@@ -1,0 +1,4 @@
+
+require 'rubygems'
+
+puts JSON
