@@ -1,0 +1,15 @@
+
+10:43:09,725 INFO  [org.torquebox.core.runtime] (Thread-105) Created ruby runtime (ruby_version: RUBY1_8, compile_mode: JIT, app: sinatra-broken-code, context: web) in 0.93s
+10:43:13,343 ERROR [org.torquebox.core.runtime] (http--127.0.0.1-8080-1) Error during execution: require %q(rack)
+Rack::Builder.new{(
+
+require 'bundler/setup'
+
+require 'the_app'
+
+run TheApp
+
+)}.to_app: org.jruby.exceptions.RaiseException: (SyntaxError) /Users/bob/repos/torquebox-training/apps/sinatra-broken-code/the_app.rb:10: unterminated string meets end of file
+        at org.jruby.RubyKernel.require(org/jruby/RubyKernel.java:1033) [jruby.jar:]
+        at (Anonymous).(root)(/Users/bob/repos/torquebox-training/apps/sinatra-broken-code/the_app.rb:6)        at org.jruby.RubyKernel.instance_eval(org/jruby/RubyKernel.java:2045) [jruby.jar:]
+        at Builder.initialize(/Users/bob/repos/torquebox-training/torquebox-2.0.3/jruby/lib/ruby/gems/1.8/gems/rack-1.4.1/lib/rack/builder.rb:51)       at (Anonymous).(root)(/Users/bob/repos/torquebox-training/apps/sinatra-broken-code/config.ru:2)
