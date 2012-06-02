@@ -1,0 +1,45 @@
+
+http://markmail.org/message/id5tv3jenu67t4ur
+
+
+a) JDK vs JRE
+
+[root@localhost DMW]# java -version
+java version "1.7.0_04"
+Java(TM) SE Runtime Environment (build 1.7.0_04-b20)
+Java HotSpot(TM) 64-Bit Server VM (build 23.0-b21, mixed mode)
+
+b) Blank page, debug
+
+http://markmail.org/message/id5tv3jenu67t4ur#query:+page:1+mid:4ipiltiuyut2c7o6+state:results
+
+$JBOSS_HOME/standalone/log/*.log per usual
+$RAILS_ROOT/log/*.log (app-specific logs)
+
+$JBOSS_HOME/standalone/deployments/*-knob.yml
+
+c) Mixed migration from Trinidad to TorqueBox
+
+http://markmail.org/message/id5tv3jenu67t4ur#query:+page:1+mid:axawvk36mqx3u6am+state:results
+
+at Object.java_import(/opt/torquebox-current/jruby/lib/ruby/site_ruby/shared/builtin/javasupport/core_ext/object.rb:46)
+at Module.Tomcat(/opt/torquebox-current/jruby/lib/ruby/gems/1.8/gems/trinidad_jars-1.0.3/lib/trinidad/jars.rb:20)
+at (Anonymous).Trinidad(/opt/torquebox-current/jruby/lib/ruby/gems/1.8/gems/trinidad_jars-1.0.3/lib/trinidad/jars.rb:10)
+at (Anonymous).(root)(/opt/torquebox-current/jruby/lib/ruby/gems/1.8/gems/trinidad_jars-1.0.3/lib/trinidad/jars.rb:5)
+at org.jruby.RubyKernel.require(org/jruby/RubyKernel.java:1033) [jruby.jar:]
+at ActiveSupport::Dependencies::Loadable.require(/opt/torquebox-current/jruby/lib/ruby/gems/1.8/gems/activesupport-2.3.10/lib/active_support/dependencies.rb:184)
+at (Anonymous).(root)(/opt/torquebox-current/jruby/lib/ruby/gems/1.8/gems/trinidad_jars-1.0.3/lib/trinidad/jars.rb:10)
+at org.jruby.RubyKernel.require(org/jruby/RubyKernel.java:1033) [jruby.jar:]
+at Runtime.require(/opt/torquebox-current/jruby/lib/ruby/gems/1.8/gems/trinidad-1.3.5/lib/trinidad.rb:68)
+at org.jruby.RubyArray.each(org/jruby/RubyArray.java:1615) [jruby.jar:]
+
+d) Something is using internal Sun classes
+
+  cannot load Java class com.sun.org.apache.xml.internal.utils.PrefixResolver
+
+e) User is using an 'old' and 'broken' gem
+
+http://markmail.org/message/id5tv3jenu67t4ur#query:+page:1+mid:uhpimy37gsexmyhe+state:results
+
+https://github.com/dylanvaughn/libxml-jruby/blob/master/lib/libxml-jruby.rb#L73
+
