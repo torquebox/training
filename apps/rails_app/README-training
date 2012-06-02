@@ -1,0 +1,45 @@
+
+## Create a new rails app named "rails_app":
+
+torquebox rails rails_app
+
+## Setup app to use PostgreSQL drivers
+
+edit Gemfile (activerecord-jdbcpostgresql-adapter)
+jruby -S bundle install
+
+Inspect Gemfile.lock
+
+    activerecord-jdbc-adapter (1.2.2)
+    activerecord-jdbcpostgresql-adapter (1.2.2)
+      activerecord-jdbc-adapter (~> 1.2.2)
+      jdbc-postgres (>= 9.0, < 9.2)
+
+## Configure app to use PostgreSQL databases
+
+edit config/database.yml
+
+## Setup the PostgreSQL database user
+
+su - postgres
+psql
+create user rails_app with createdb password 'rails_app'
+
+##  Create the db
+
+jruby -S rake db:create
+
+## Create some resources
+
+jruby -S ./script/rails generate scaffold user username:string full_name:string
+jruby -S ./script/rails generate scaffold blog title:string user:belongs_to
+jruby -S ./script/rails generate scaffold entry title:string content:text blog:belongs_to
+jruby -S ./script/rails generate scaffold comment content:text user:belongs_to entry:belongs_to
+
+edit app/models/*.rb
+edit app/views/*.rb
+edit app/controllers/*.rb
+
+## Prepare database
+
+jruby -S rake db:migrate
