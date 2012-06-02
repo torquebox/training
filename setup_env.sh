@@ -5,3 +5,4 @@ export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
 export PATH=$JRUBY_HOME/bin:$PATH
 export PATH=$JBOSS_HOME/bin:$PATH
+
