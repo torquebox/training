@@ -12,7 +12,7 @@
   <tr>
     <td><%= blog.title %></td>
     <td><%= link_to 'Show', [@user, blog] %></td>
-    <td><%= link_to 'Edit', edit_blog_path(@user, blog) %></td>
+    <td><%= link_to 'Edit', edit_user_blog_path(@user, blog) %></td>
     <td><%= link_to 'Destroy', [@user, blog] , :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

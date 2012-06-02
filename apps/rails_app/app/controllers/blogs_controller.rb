@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.where( :user_id=>@user )
 
     respond_to do |format|
       format.html # index.html.erb
