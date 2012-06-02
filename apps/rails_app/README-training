@@ -43,3 +43,11 @@ edit app/controllers/*.rb
 ## Prepare database
 
 jruby -S rake db:migrate
+
+## Deploy
+
+jruby -S torqubox deploy
+
+## Browse
+
+http://localhost:8080/

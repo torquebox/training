@@ -1,0 +1,13 @@
+
+queues:
+  /queue/simple_queue:
+    durable: false
+
+messaging:
+  /queue/simple_queue: SimpleProcessor
+
+jobs:
+  job.one:
+    job: Generator
+    description: Generates things on the queue
+    cron: '*/1 * * * * ?'
