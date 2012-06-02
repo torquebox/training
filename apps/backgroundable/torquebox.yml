@@ -1,0 +1,10 @@
+
+jobs:
+  job.one:
+    job: SimpleJob
+    description: My Job is simple 
+    cron: '*/1 * * * * ?'
+
+tasks:
+  Backgroundable:
+    concurrency: 5
